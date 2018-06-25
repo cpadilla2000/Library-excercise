@@ -62,5 +62,7 @@ var book = function (Title, Author, numberOfPages, publishDate) {
 document.addEventListener("DOMContentLoaded", function() {
   window.gLibrary = new Library();//instance one
   var bookOne = new Book
+
+
   window.bookOne = new Book("IT","Stepehen King", 800, new date ("12","14","1986")
 });
