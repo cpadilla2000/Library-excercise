@@ -53,7 +53,7 @@ var book = function (Title, Author, numberOfPages, publishDate) {
   this.author = Title;
   this.numberOfPages = numberOfPages;
   this.publishDate = new date(publishDate);
-}
+};
 
 
 
@@ -61,5 +61,5 @@ var book = function (Title, Author, numberOfPages, publishDate) {
 
 document.addEventListener("DOMContentLoaded", function() {
   window.gLibrary = new Library();//instance one
-  var bookOne = new Book("IT","Stepehen King", 800, new date ("12","14","1986")
+  var bookOne = new Book ("IT","Stepehen King", 800, new date ("12","14","1986")
 });
