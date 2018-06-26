@@ -11,12 +11,12 @@ Library.prototype.addBook = function (book) {
     }
   }
   this._bookshelf.push(book);
-  return true;
+        return true;
 };
 //Purpose: Add a book object to your books array.
 //Return:boolean true if it is not already added, false if it is already added.
 
-Library.prototype.removeBookTitle = function (title) {};
+Library.prototype.removeBookTitle = function (title) {
 
 //Purpose: Remove book from from the books array by its title.
 //Return:boolean true if the book(s) were removed, false if no books match
@@ -24,18 +24,28 @@ Library.prototype.removeBookTitle = function (title) {};
     if(this._bookshelf[i].title.indexOf(title) > -1){// remove book from this array point
       this._bookshelf.splice(i, 1)
       return true;
-      }// match this to the title coming in. if it matches return true.
+    }// match this to the title coming in. if it matches return true.
   }
 
-return false;
-
-Library.prototype.removeBookByAuthor = function (authorName) {};
+      return false;
+};
+Library.prototype.removeBookByAuthor = function (authorName) {
 
 //Purpose: Remove a specific book from your books array by the author name.
-//Return: booleantrue if the book(s) were removed, false if no books match
+//Return: boolean true if the book(s) were removed, false if no books match
+  for(var i = 0; i < this._bookshelf.length; i++) {
+    if(this._bookshelf[i].authorName.indexOf(authorName) > -1) {
+      this._bookshelf.splice(i, 1)
+      return true;
+    }
+  }
+      return false;
+};
+Library.prototype.getRandomBook = function () {
+  //this._bookshelf
+};
 
-Library.prototype.getRandomBook = function () {};
-
+  //return this._bookshelf[Math.floor(Math.random()*myArray.length)];
 //Purpose: Return a random book object from your books array
 //Return: book object if you find a book, null if there are no books
 
