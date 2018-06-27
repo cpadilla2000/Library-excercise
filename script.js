@@ -72,13 +72,13 @@ Library.prototype.getBooksByAuthor = function (authorName) {
   var tempLib = new Array();
     for (var i = 0; i < this._bookshelf.length; i++) {
       if(this._bookshelf[i].author === authorName) {
-       tempLib.push(this._bookshelf[i].title);
+       tempLib.push(this._bookshelf[i].title)
       }
     }
   //loop through bookshelf and if author in param matches current book author in for iteration then add book
   //book to tempLib and return templib
 //
-  return tempLib ;
+  return tempLib;
 };
 //
 //Purpose: Finds all books where the author’s name partially or completely match-es the authorName argument passed to the function.
@@ -90,9 +90,13 @@ Library.prototype.getAuthors = function () {};
 //Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
 
 Library.prototype.getRandomAuthorByName = function () {
+  for (var i = 0; i < this._bookshelf.length; i++) {
+    if(this._bookshelf[i].author === author) {
+    return this._bookshelf[Math.floor(Math.random() * this._bookshelf.length)];
+    }
+  }
 
-var randAuthor = this._bookshelf[Math.floor(Math.random() * this._bookshelf.length)];
-return randAuthor;
+
 
 };
 //Purpose: Retrieves a random author name from your books collection
@@ -105,6 +109,7 @@ function booksInLibrary () {
    gLibrary.addBook(gbookThree)
    gLibrary.addBook(gbookFour)
    gLibrary.addBook(gbookFive)
+   gLibrary.addBook(gbookSix)
    return gLibrary;
  }
 
@@ -127,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
   window.gbookThree = new Book ("James and the giant Peach","Roald Dahl", 160, "6-23-1961");
   window.gbookFour = new Book ("Kon Tiki","Thor Heyerdahl", 459, "8-22-1948");
   window.gbookFive = new Book ("Franny and Zooey","JD Salinger", 258, "2-08-1961");
+  window.gbookSix = new Book ("The Shining","Stepehen King", 743, "1-25-1986");
 
 
 });
