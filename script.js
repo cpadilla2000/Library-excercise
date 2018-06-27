@@ -44,9 +44,13 @@ Library.prototype.removeBookByAuthor = function (author) {
 };
 
 Library.prototype.getRandomBook = function () {
-  var randomBook = this._bookshelf;
-}
-return this._bookshelf[Math.floor(Math.random()*this._bookshelf.length)];
+
+    var rand = this._bookshelf[Math.floor(Math.random() * this._bookshelf.length)];
+    return rand;
+
+  };
+
+
 //Purpose: Return a random book object from your books array
 //Return: book object if you find a book, null if there are no books
 
@@ -66,12 +70,15 @@ Library.prototype.getBookByTitle = function (title) {
 //
 Library.prototype.getBooksByAuthor = function (authorName) {
   var tempLib = new Array();
-
+    for (var i = 0; i < this._bookshelf.length; i++) {
+      if(this._bookshelf[i].author === authorName) {
+       tempLib.push(this._bookshelf[i].title);
+      }
+    }
   //loop through bookshelf and if author in param matches current book author in for iteration then add book
   //book to tempLib and return templib
 //
-
-  return tempLib;
+  return tempLib ;
 };
 //
 //Purpose: Finds all books where the author’s name partially or completely match-es the authorName argument passed to the function.
@@ -82,10 +89,26 @@ Library.prototype.getAuthors = function () {};
 //Purpose: Find the distinct authors’ names from all books in your library
 //Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
 
-Library.prototype.getRandomAuthorByName = function () {};
+Library.prototype.getRandomAuthorByName = function () {
 
+var randAuthor = this._bookshelf[Math.floor(Math.random() * this._bookshelf.length)];
+return randAuthor;
+
+};
 //Purpose: Retrieves a random author name from your books collection
 //Return: string author name, null if no books exist
+
+
+function booksInLibrary () {
+   gLibrary.addBook(gbookOne)
+   gLibrary.addBook(gbookTwo)
+   gLibrary.addBook(gbookThree)
+   gLibrary.addBook(gbookFour)
+   gLibrary.addBook(gbookFive)
+   return gLibrary;
+ }
+
+
 
 //create book object
 var Book = function (Title, Author, numberOfPages, publishDate) {
@@ -100,7 +123,10 @@ var Book = function (Title, Author, numberOfPages, publishDate) {
 document.addEventListener("DOMContentLoaded", function() {
   window.gLibrary = new Library();
   window.gbookOne = new Book ("IT","Stepehen King", 800, "12-14-1986");
-  window.gbookTwo = new Book ("Catcher In The Rye","JD Salinger", 350, "7-16-1961");
+  window.gbookTwo = new Book ("Catcher in the Rye","JD Salinger", 350, "7-16-1961");
   window.gbookThree = new Book ("James and the giant Peach","Roald Dahl", 160, "6-23-1961");
+  window.gbookFour = new Book ("Kon Tiki","Thor Heyerdahl", 459, "8-22-1948");
+  window.gbookFive = new Book ("Franny and Zooey","JD Salinger", 258, "2-08-1961");
+
 
 });
