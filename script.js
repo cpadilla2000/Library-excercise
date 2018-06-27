@@ -4,7 +4,7 @@ var Library = function(){
 
 Library.prototype.addBook = function (book) {
   if(this._bookshelf.length) {
-    for(var i = 0; i <this._bookshelf.length; i++) {
+    for(var i = 0; i < this._bookshelf.length; i++) {
       if(this._bookshelf[i].title.indexOf(book.title) > -1){
         return false;
       }
@@ -20,7 +20,7 @@ Library.prototype.removeBookByTitle = function (title) {
 
 //Purpose: Remove book from from the books array by its title.
 //Return:boolean true if the book(s) were removed, false if no books match
-  for(var i = 0; i <this._bookshelf.length; i++) {
+  for(var i = 0; i < this._bookshelf.length; i++) {
     if(this._bookshelf[i].title.indexOf(title) > -1) {// remove book from this array point
       this._bookshelf.splice(i, 1);
       return true;// match this to the title coming in. if it matches return true.
@@ -29,11 +29,12 @@ Library.prototype.removeBookByTitle = function (title) {
 
   return false;
 };
+
 Library.prototype.removeBookByAuthor = function (author) {
 
 //Purpose: Remove a specific book from your books array by the author name.
 //Return: boolean true if the book(s) were removed, false if no books match
-  for(var i = 0; i <this._bookshelf.length; i++) {
+  for(var i = 0; i < this._bookshelf.length; i++) {
     if(this._bookshelf[i].author.indexOf(author) > -1) {
       this._bookshelf.splice(i, 1)
       return true;
@@ -43,21 +44,20 @@ Library.prototype.removeBookByAuthor = function (author) {
 };
 
 Library.prototype.getRandomBook = function () {
-  //this._bookshelf
+  var randomBook = this._bookshelf;
 }
-
-//return this._bookshelf[Math.floor(Math.random()*myArray.length)];
+return this._bookshelf[Math.floor(Math.random()*this._bookshelf.length)];
 //Purpose: Return a random book object from your books array
 //Return: book object if you find a book, null if there are no books
 
 Library.prototype.getBookByTitle = function (title) {
   //iterate through bookshelf and if titles match return that book otherwise return false
   for (var i = 0; i < this._bookshelf.length; i++) {
-    if(this._bookshelf[i].title.indexOf(title) > -1) {
+    if(this._bookshelf[i].title === title) {
     return this._bookshelf[i];
     }
   }
-  
+
   return false;
 };
 
@@ -69,6 +69,7 @@ Library.prototype.getBooksByAuthor = function (authorName) {
 
   //loop through bookshelf and if author in param matches current book author in for iteration then add book
   //book to tempLib and return templib
+//
 
   return tempLib;
 };
