@@ -111,11 +111,11 @@ Library.prototype.getAuthors = function () {
     }
 
     if(!doesAuthExistInTemp){//logical not operator for variable doesAuthExistInTemp
-     tempAuths.push(this._bookshelf[i].author);// push author to bookshelf 
+     tempAuths.push(this._bookshelf[i].author);// push author to bookshelf
     }
   }
 
-  return tempAuths;
+  return tempAuths;//
 };
 
 Library.prototype.getRandomAuthorByName = function () {
