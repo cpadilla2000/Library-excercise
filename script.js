@@ -23,8 +23,8 @@ Library.prototype.removeBookByTitle = function (title) {
 
   for(var i = 0; i < this._bookshelf.length; i++) {//itteration through bookshelf
     if(this._bookshelf[i].title.indexOf(title) > -1) {// remove book from this array point
-      this._bookshelf.splice(i, 1);
-      return true;// match this to the title coming in. if it matches return true.
+      this._bookshelf.splice(i, 1)
+      return true + " " + "-" + " " + "this title was removed from bookshelf";// match this to the title coming in. if it matches return true.
     }
   }
 
@@ -37,8 +37,8 @@ Library.prototype.removeBookByAuthor = function (author) {
 
   for(var i = 0; i < this._bookshelf.length; i++) {//itteration through bookshelf
     if(this._bookshelf[i].author.indexOf(author) > -1) {//if statement for finding book by author
-      this._bookshelf.splice(i, 1);//splice book from array to remove book
-      return true;
+      this._bookshelf.splice(i, 1)//splice book from array to remove book
+      return true + " " + "-" + " " + "book was removed by author from bookshelf";
     }
   }
       return false;
@@ -115,7 +115,7 @@ Library.prototype.getAuthors = function () {
     }
   }
 
-  return tempAuths;//
+  return tempAuths;
 };
 
 Library.prototype.getRandomAuthorByName = function () {
