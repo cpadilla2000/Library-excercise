@@ -37,7 +37,7 @@ Library.prototype.removeBookByAuthor = function (author) {
 
   for(var i = 0; i < this._bookshelf.length; i++) {//itteration through bookshelf
     if(this._bookshelf[i].author.indexOf(author) > -1) {//if statement for finding book by author
-      this._bookshelf.splice(i, 1)//splice book from array to remove book
+      this._bookshelf.splice(i, 1);//splice book from array to remove book
       return true;
     }
   }
