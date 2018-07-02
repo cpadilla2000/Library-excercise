@@ -105,12 +105,12 @@ Library.prototype.getAuthors = function () {
 
     for (var j = 0; j < tempAuths.length; j++) { //tempArray itteration
 
-      if (this._bookshelf[i].author === tempAuths[j]){//comparison if statement between both book arrays
+      if (this._bookshelf[i].author === tempAuths[j]) {//comparison if statement between both book arrays
         doesAuthExistInTemp = true;
       }
     }
 
-    if(!doesAuthExistInTemp){//logical not operator for variable doesAuthExistInTemp
+    if(!doesAuthExistInTemp) {//logical not operator for variable doesAuthExistInTemp
      tempAuths.push(this._bookshelf[i].author);// push author to bookshelf
     }
   }
