@@ -13,7 +13,7 @@ Library.prototype.addBook = function (book) {
       }
     }
   }
-  this._bookshelf.push(book);//then push books to book array
+  this._bookshelf.push(book);//then push books 
         return true;
 };
 
@@ -175,6 +175,4 @@ document.addEventListener("DOMContentLoaded", function() {
   window.gbookSeven = new Book ("The Book Of Joe","Jonathon Tropper", 743, "3-30-2004");
   window.gbookEight = new Book ("The Sun And Her Flowers","Rupi Kaur", 297, "3-27-2016");
   window.gbookNine = new Book ("The Alchemist","Paulo Coelho", 247, "3-30-1981");
-
-
 });
