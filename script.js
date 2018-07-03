@@ -13,7 +13,7 @@ Library.prototype.addBook = function (book) {
       }
     }
   }
-  this._bookshelf.push(book);//then push books 
+  this._bookshelf.push(book);//then push books
         return true;
 };
 
@@ -24,7 +24,7 @@ Library.prototype.removeBookByTitle = function (title) {
   for(var i = 0; i < this._bookshelf.length; i++) {//itteration through bookshelf
     if(this._bookshelf[i].title.indexOf(title) > -1) {// remove book from this array point
       this._bookshelf.splice(i, 1)
-      return true + " " + "-" + " " + "this title was removed from bookshelf";// match this to the title coming in. if it matches return true.
+      return true;// match this to the title coming in. if it matches return true.
     }
   }
 
@@ -38,7 +38,7 @@ Library.prototype.removeBookByAuthor = function (author) {
   for(var i = 0; i < this._bookshelf.length; i++) {//itteration through bookshelf
     if(this._bookshelf[i].author.indexOf(author) > -1) {//if statement for finding book by author
       this._bookshelf.splice(i, 1)//splice book from array to remove book
-      return true + " " + "-" + " " + "book was removed by author from bookshelf";
+      return true;
     }
   }
       return false;
@@ -128,6 +128,10 @@ Library.prototype.getRandomAuthorByName = function () {
   return this.getRandomBook().author;//use get random book function for authors
 
 };
+
+Library.prototype.searchLibrary = function () {};
+
+
 
 //books in library function
 function booksInLibrary () {
