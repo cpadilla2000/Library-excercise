@@ -1,0 +1,42 @@
+/*------header image------*/
+.book-image {
+  background-image: url("http://ethosworld.com/library/library6.jpg");
+  padding: 8em 0 0 0;
+  margin: -2em 0 0 0;
+  background-position: fixed;
+}
+/*------text header------*/
+div h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 600%;
+}
+/*------add book button------*/
+.btn-right {
+  margin: 0 0 0 75em;
+}
+/*------remove book button------*/
+.btn-left {
+  margin: 0 0 0 10em;
+}
+
+/*------buttons------*/
+
+.buttons {
+  margin: 2em 0 0 0;
+}
+
+.buttons .show-button {
+  margin: 0 0 0 12em;
+}
+
+/*------table------*/
+.table {
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/08/64/32581446bd2a156.jpg");
+  margin: 2em 0 0 0;
+  border: 1px solid black;
+}
+
+body {
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/08/64/32581446bd2a156.jpg");
+}

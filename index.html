@@ -5,38 +5,100 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/library.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <title>My Library</title>
   </head>
   <body>
 
+    <section class="nav">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse">
+            <form class="navbar-form navbar-right">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username">
+                <input type="text" class="form-control" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-default">Login</button>
+            </form>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </section>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse">
-        <form class="navbar-form navbar-right">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-  <section class="Title">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-lg-12">
-        <div class="jumbotron">
+  <div class="container-fluid">
+    <section class="title">
+      <div class="row book-image">
+        <div class="col-md-12 col-sm-12 col-lg-12">
+          <button class="btn btn-default btn-sm btn-left" type="submit"><i class="fas fa-plus"></i> Add Book</button>
+          <button class="btn btn-default btn-sm btn-right" type="submit"><i class="fas fa-minus"></i> remove Book</button>
           <h1>My Library</h1
-
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="buttons">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <button type="button" class="btn btn-default btn-md">Show All Books</button>
+          <button type="button" class="btn btn-default btn-md">Random Book</button>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <form class="form-inline">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Author">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Title">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <button type="button" class="btn btn-default btn-md show-button">Show All Authors</button>
+          <button type="button" class="btn btn-default btn-md random-button">Random Author</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="table">
+      <table class="table table-bordered table-hover">
+        <div class="table-responsive">
+          <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>pubDate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>IT</td>
+                <td>Stephen King</td>
+                <td>800</td>
+                <td>12-14-1986</td>
+            </tr>
+            <tr>
+                <td>Catcher in the Rye</td>
+                <td>JD Salinger</td>
+                <td>350</td>
+                <td>07-16-1961</td>
+            </tr>
+            <tr>
+                <td>James and the giant Peach</td>
+                <td>Roald Dahl</td>
+                <td>160</td>
+                <td>06-23-1961</td>
+            </tr>
+          </tbody>
+        </div>
+      </table>
+    </section>
 
 
-  <script type="js/jquery.js"></script>
-  <script type="css/bootstrap.js"></script>
-  <script src="js/script.js" charset="utf-8"></script>
+      <script type="js/jquery.js"></script>
+      <script type="css/bootstrap.js"></script>
+      <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
