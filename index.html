@@ -40,7 +40,7 @@
     <section class="buttons">
       <div class="row">
         <div class="col-md-4 col-sm-4 col-lg-4">
-          <button type="button" class="btn btn-default btn-md">Show All Books</button>
+          <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#showBooks">Show All Books</button>
           <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#recomBook">Recommended Book</button>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
@@ -76,11 +76,11 @@
           </thead>
           <tbody>
             <tr>
-                <td><img src="https://upload.wikimedia.org/wikipedia/en/5/5a/It_cover.jpg" alt=""></td>
-                <td>IT</td>
-                <td>Stephen King</td>
-                <td>800</td>
-                <td>12-14-1986</td>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Frannyzoey.jpg" alt=""></td>
+                <td>Franny and Zooey</td>
+                <td>JD Salinger</td>
+                <td>258</td>
+                <td>02-08-1961</td>
                 <td><button type="button" class="btn-md">X</button></td>
             </tr>
             <tr>
@@ -257,6 +257,29 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary button-rec" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+
+  <div class="modal fade" id="showBooks" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Show All Books</h4>
+        </div>
+        <div class="modal-body">
+          <div class="col-md-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Frannyzoey.jpg" alt="" class="img-modal">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rye_catcher.jpg" alt="" class="img-modal">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/d5/JamesAndTheGiantPeach.jpg" alt="" class="img-modal">
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/66/TheKonTikiExpedition.jpg" alt="" class="img-modal">
+            <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/TheAlchemist.jpg" alt="" class="img-modal">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary button-show" data-dismiss="modal">Close</button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

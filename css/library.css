@@ -30,6 +30,7 @@ div h1 {
   margin: 0 0 0 13em;
 }
 
+
 /*------table------*/
 .table {
   background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/08/64/32581446bd2a156.jpg");
@@ -37,16 +38,19 @@ div h1 {
   border: 1px solid black;
 }
 
+/*table images*/
 img {
-  height: 100px;
+  height: 175px;
 }
 
+/*images for modals*/
 .img-modal {
   height: 200px;
   width: 150px;
   margin: 3em 0 0 0;
 
 }
+/*recommend modal*/
 
 .rec-text {
   font-size: 18px;
@@ -56,6 +60,8 @@ img {
 .button-rec {
   margin: 8em 1em 0em 0;
 }
+/*---------------*/
+
 .td {
   border: 1px solid black;
 }
@@ -67,14 +73,23 @@ img {
 }
 /*-------------------*/
 
+/*remove modal text*/
 .remove-text {
   margin: 1em 0 0 0;
 }
 
+/*copyright*/
 .copyright-text {
   margin: -1em 0 0 0;
   text-align: center;
 }
+
+/*show books*/
+.button-show {
+  margin: 90em 1em 0 0;
+}
+
+
 body {
   background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/08/64/32581446bd2a156.jpg");
 }
