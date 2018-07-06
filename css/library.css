@@ -5,6 +5,8 @@
   margin: -2em 0 0 0;
   background-position: fixed;
 }
+
+
 /*------text header------*/
 div h1 {
   text-align: center;
@@ -86,9 +88,8 @@ img {
 
 /*show books*/
 .button-show {
-  margin: 90em 1em 0 0;
+  margin: 75em 1em 0 0;
 }
-
 
 body {
   background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/08/64/32581446bd2a156.jpg");
