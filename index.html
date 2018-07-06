@@ -26,12 +26,12 @@
       </nav>
     </section>
 
-  <div class="container-fluid">
+<div class="container-fluid">
     <section class="title">
       <div class="row book-image">
         <div class="col-md-12 col-sm-12 col-lg-12">
-          <button class="btn btn-default btn-sm btn-left" type="submit"><i class="fas fa-plus"></i> Add Book</button>
-          <button class="btn btn-default btn-sm btn-right" type="submit"><i class="fas fa-minus"></i> remove Book</button>
+          <button class="btn btn-default btn-sm btn-left" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i> Add Book</button>
+          <button class="btn btn-default btn-sm btn-right" data-toggle="modal" data-target="#removeModal"><i class="fas fa-minus"></i> Remove Book</button>
           <h1>My Library</h1
         </div>
       </div>
@@ -41,7 +41,7 @@
       <div class="row">
         <div class="col-md-4 col-sm-4 col-lg-4">
           <button type="button" class="btn btn-default btn-md">Show All Books</button>
-          <button type="button" class="btn btn-default btn-md">Random Book</button>
+          <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#recomBook">Recommended Book</button>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
           <form class="form-inline">
@@ -55,8 +55,8 @@
           </form>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
-          <button type="button" class="btn btn-default btn-md show-button">Show All Authors</button>
-          <button type="button" class="btn btn-default btn-md random-button">Random Author</button>
+          <button type="button" class="btn btn-default btn-md show-button" data-toggle="modal" data-target="#showAuthor">Show All Authors</button>
+          <button type="button" class="btn btn-default btn-md random-button" data-toggle="modal" data-target="#randAuthor">Random Author</button>
         </div>
       </div>
     </section>
@@ -65,40 +65,214 @@
       <table class="table table-bordered table-hover">
         <div class="table-responsive">
           <thead>
-            <tr>
+            <tr class="warning">
+                <th>Cover</th>
                 <th>Title</th>
                 <th>Author</th>
                 <th>Pages</th>
                 <th>pubDate</th>
+                <th>Remove Book</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/5/5a/It_cover.jpg" alt=""></td>
                 <td>IT</td>
                 <td>Stephen King</td>
                 <td>800</td>
                 <td>12-14-1986</td>
+                <td><button type="button" class="btn-md">X</button></td>
             </tr>
             <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rye_catcher.jpg" alt=""></td>
                 <td>Catcher in the Rye</td>
                 <td>JD Salinger</td>
                 <td>350</td>
                 <td>07-16-1961</td>
+                <td><button type="button" class="btn-md">X</button></td>
             </tr>
             <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/d/d5/JamesAndTheGiantPeach.jpg" alt=""></td>
                 <td>James and the giant Peach</td>
                 <td>Roald Dahl</td>
                 <td>160</td>
                 <td>06-23-1961</td>
+                <td><button type="button" class="btn-md">X</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/6/66/TheKonTikiExpedition.jpg" alt=""></td>
+                <td>Kon Tiki</td>
+                <td>Thor Heyerdahl</td>
+                <td>459</td>
+                <td>08-22-1948</td>
+                <td><button type="button" class="btn-md">X</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/en/c/c4/TheAlchemist.jpg" alt=""></td>
+                <td>The Alchemist</td>
+                <td>Paulo Coelho</td>
+                <td>247</td>
+                <td>03-30-1981</td>
+                <td><button type="button" class="btn-md">X</button></td>
             </tr>
           </tbody>
         </div>
       </table>
     </section>
 
+<!---add book modal--->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Add Book</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Title*</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="" placeholder="Title">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Author*</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="" placeholder="Author">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Pages</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="" placeholder="Pages">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Pub Date</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="" placeholder="Publication Date">
+              </div>
+            </div>
+              <p>Synopsis</p>
+              <textarea class="form-control" rows="3"></textarea>
+              <p class="book-cover">Book Cover</p>
+              <button type="button" class="btn btn-info btn-xs file-btn">Choose File</button>
+            <div class="modal-footer">
+            <div class="col-md-2">
+              <button type="button" class="btn btn-success btn-queue" data-dismiss="modal">Queue Book To Add</button>
+            </div>
+            <div class="col-md-10">
+              <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Add Books To Library</button>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+  </div><!-- /.modal -->
 
-      <script type="js/jquery.js"></script>
-      <script type="css/bootstrap.js"></script>
-      <script src="js/script.js" charset="utf-8"></script>
+    <!-- remove modal----->
+  <div class="modal fade modal-1" id="removeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Remove Book</h4>
+        </div>
+        <div class="form-group col-md-6 remove-text">
+          <label for="usr">Remove By Title</label>
+          <input type="text" class="form-control" id="usr">
+        </div>
+        <div class="form-group col-md-6 remove-text">
+          <label for="pwd">Remove By Author</label>
+          <input type="password" class="form-control" id="pwd">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Remove Books</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!-- author modal----->
+  <div class="modal fade" id="showAuthor" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">All Authors</h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>JD Salinger</li>
+            <li>Stephen King</li>
+            <li>Roald Dahl</li>
+            <li>Jonathon Tropper</li>
+            <li>Thor Heyerdahl</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+<!--random author---->
+  <div class="modal fade" id="randAuthor" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Random Authors</h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>JD Salinger</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!--recommended Book---->
+  <div class="modal fade" id="recomBook" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Recommended Book By Collin Taylor</h4>
+        </div>
+        <div class="modal-body">
+          <div class="col-md-4">
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/66/TheKonTikiExpedition.jpg" alt="" class="img-modal">
+          </div>
+          <div class="col-md-8 rec-text">
+            <p>Title:</p>
+            <p>Pages:</p>
+            <p>Publication Date:</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary button-rec" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+<!--copyright symbol---->
+  <div class="row">
+    <div class="col-md-12">
+      <p class="copyright-text">&copy;Copyright 2018</p>
+    </div>
+  </div>
+
+</div><!--closing container fluid------>
+      <script src="js/jquery.js"></script>
+      <script src="js/bootstrap.js"></script>
+      <script src="js/script.js"></script>
   </body>
 </html>

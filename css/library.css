@@ -27,7 +27,7 @@ div h1 {
 }
 
 .buttons .show-button {
-  margin: 0 0 0 12em;
+  margin: 0 0 0 13em;
 }
 
 /*------table------*/
@@ -37,6 +37,44 @@ div h1 {
   border: 1px solid black;
 }
 
+img {
+  height: 100px;
+}
+
+.img-modal {
+  height: 200px;
+  width: 150px;
+  margin: 3em 0 0 0;
+
+}
+
+.rec-text {
+  font-size: 18px;
+  margin: 3em 0 0 0;
+}
+
+.button-rec {
+  margin: 8em 1em 0em 0;
+}
+.td {
+  border: 1px solid black;
+}
+/*----add book modal-----*/
+
+.book-cover {
+  margin: 2em 0 0 0;
+  font-size: 12px;
+}
+/*-------------------*/
+
+.remove-text {
+  margin: 1em 0 0 0;
+}
+
+.copyright-text {
+  margin: -1em 0 0 0;
+  text-align: center;
+}
 body {
   background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/08/64/32581446bd2a156.jpg");
 }
