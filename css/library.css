@@ -1,0 +1,98 @@
+/*------header image------*/
+.book-image {
+  background-image: url("http://ethosworld.com/library/library6.jpg");
+  padding: 8em 0 0 0;
+  margin: -2em 0 0 0;
+  background-position: fixed;
+}
+
+
+/*------text header------*/
+div h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 600%;
+}
+/*------add book button------*/
+.btn-right {
+  margin: 0 0 0 75em;
+}
+/*------remove book button------*/
+.btn-left {
+  margin: 0 0 0 10em;
+}
+
+/*------buttons------*/
+
+.buttons {
+  margin: 2em 0 0 0;
+}
+
+.buttons .show-button {
+  margin: 0 0 0 13em;
+}
+
+
+/*------table------*/
+.table {
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/08/64/32581446bd2a156.jpg");
+  margin: 2em 0 0 0;
+  border: 1px solid black;
+}
+
+/*table images*/
+img {
+  height: 175px;
+}
+
+/*images for modals*/
+.img-modal {
+  height: 200px;
+  width: 150px;
+  margin: 3em 0 0 0;
+
+}
+/*recommend modal*/
+
+.rec-text {
+  font-size: 18px;
+  margin: 3em 0 0 0;
+}
+
+.button-rec {
+  margin: 8em 1em 0em 0;
+}
+/*---------------*/
+
+.td {
+  border: 1px solid black;
+}
+/*----add book modal-----*/
+
+.book-cover {
+  margin: 2em 0 0 0;
+  font-size: 12px;
+}
+/*-------------------*/
+
+/*remove modal text*/
+.remove-text {
+  margin: 1em 0 0 0;
+}
+
+/*copyright*/
+.copyright-text {
+  margin: -1em 0 0 0;
+  text-align: center;
+}
+
+/*show books*/
+.button-show {
+  margin: 75em 1em 0 0;
+}
+
+body {
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/08/64/32581446bd2a156.jpg");
+}
+
+.scrollable

@@ -1,0 +1,30 @@
+// var ShowAuthorsUI = function(){
+//   Library.call(this);
+// };
+//
+//
+// ShowAuthorsUI.prototype = Object.create(Library.prototype);
+//
+//
+// ShowAuthorsUI.prototype.init = function (){
+//
+//   this._bindEvents();
+//
+// };
+//
+// ShowAuthorsUI.prototype._bindEvents = function(){
+//   $("button[data-target="#showAuthor"]").on('click', $.proxy(this, this._handleShowAuthors));
+//
+// };
+//
+// ShowAuthorsUI.prototype._handleShowAuthors = function (){
+//   $("#showAllAuthorsModal").modal('show');
+//   console.log(this.getAuthors());
+//
+//
+// };
+//
+// $(function(){
+//   window.gShowAuthorsUI = new ShowAuthorsUI();
+//   window.gShowAuthorsUI.init();
+// });
