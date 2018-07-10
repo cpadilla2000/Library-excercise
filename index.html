@@ -30,7 +30,7 @@
     <section class="title">
       <div class="row book-image">
         <div class="col-md-12 col-sm-12 col-lg-12">
-          <button class="btn btn-default btn-sm btn-left" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i> Add Book</button>
+          <button class="btn btn-default btn-sm btn-left" id="add-modal-btn"><i class="fas fa-plus"></i> Add Book</button>
           <button class="btn btn-default btn-sm btn-right" data-toggle="modal" data-target="#removeModal"><i class="fas fa-minus"></i> Remove Book</button>
           <h1>My Library</h1>
         </div>
@@ -55,7 +55,7 @@
           </form>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
-          <button type="button" class="btn btn-default btn-md show-button" data-toggle="modal" data-target="#showAuthor">Show All Authors</button>
+          <button type="button" class="btn btn-default btn-md show-button" id="showAuthors">Show All Authors</button>
           <button type="button" class="btn btn-default btn-md random-button" data-toggle="modal" data-target="#randAuthor">Random Author</button>
         </div>
       </div>
@@ -139,19 +139,19 @@
           <div class="modal-body">
             <form class="form-horizontal" role="form">
             <div class="form-group">
-              <label for="inputEmail3" class="col-sm-2 control-label">Title*</label>
+              <label for="inputEmail3" name="title" class="col-sm-2 control-label">Title*</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="" placeholder="Title">
+                <input type="email" class="form-control" id="" placeholder="Book Title">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-2 control-label">Author*</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="" placeholder="Author">
+                <input type="password" name="author" class="form-control" id="" placeholder="Author">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">Pages</label>
+              <label for="inputPassword3" name="pages" class="col-sm-2 control-label">Pages</label>
               <div class="col-sm-10">
                 <input type="password" class="form-control" id="" placeholder="Pages">
               </div>
@@ -159,7 +159,7 @@
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-2 control-label">Pub Date</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="" placeholder="Publication Date">
+                <input type="password" name="pubdate" class="form-control" id="" placeholder="Publication Date">
               </div>
             </div>
               <p>Synopsis</p>
@@ -167,12 +167,15 @@
               <p class="book-cover">Book Cover</p>
               <button type="button" class="btn btn-info btn-xs file-btn">Choose File</button>
             <div class="modal-footer">
+              <div class="row">
             <div class="col-md-2">
-              <button type="button" class="btn btn-success btn-queue" data-dismiss="modal">Queue Book To Add</button>
+              <button type="button" name="" class="btn btn-success btn-queue" id="add-queue-btn">Queue Book To Add</button>
             </div>
-            <div class="col-md-10">
+            <span>0 &nbsp books added to queue</span>
+            <div class="col-md-">
               <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Add Books To Library</button>
             </div>
+              </div>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -211,13 +214,6 @@
           <h4 class="modal-title">All Authors</h4>
         </div>
         <div class="modal-body">
-          <ul>
-            <li>JD Salinger</li>
-            <li>Stephen King</li>
-            <li>Roald Dahl</li>
-            <li>Jonathon Tropper</li>
-            <li>Thor Heyerdahl</li>
-          </ul>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -332,13 +328,15 @@
 
 <!---javscript----------->
 
-      <script src="js/jquery.js" charset="utf-8"></script>
-      <script src="js/script.js" charset="utf-8"></script>
-      <script src="js/util.js" charset="utf-8"></script>
-      <script src="js/addBooksUI.js" charset="utf-8"></script>
-      <script src="js/newBook.js" charset="utf-8"></script>
-      <script src="js/showauthors" charset="utf-8"></script>
-      <script src="js/bootstrap.js" charset="utf-8"></script>
+<script src="js/jquery.js" charset="utf-8"></script>
+<script src="js/bootstrap.js" charset="utf-8"></script>
+<script src="js/script.js" charset="utf-8"></script>
+<script src="js/showAuthorsUI.js" charset="utf-8"></script>
+<script src="js/addBooksUI.js" charset="utf-8"></script>
+<!--<script src="js/util.js" charset="utf-8"></script>-->
+<script src="js/newBookVar.js" charset="utf-8"></script>
+-->
+
 
   </body>
 </html>
