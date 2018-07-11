@@ -140,26 +140,28 @@
             <form class="form-horizontal" role="form">
             <div class="form-group">
               <label for="inputEmail3" name="title" class="col-sm-2 control-label">Title*</label>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <input type="email" class="form-control" id="" placeholder="Book Title">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-2 control-label">Author*</label>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <input type="password" name="author" class="form-control" id="" placeholder="Author">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword3" name="pages" class="col-sm-2 control-label">Pages</label>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <input type="password" class="form-control" id="" placeholder="Pages">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">Pub Date</label>
-              <div class="col-sm-10">
-                <input type="password" name="pubdate" class="form-control" id="" placeholder="Publication Date">
+              <div class='input-group date' id='datetimepicker1'>
+                  <input type='text' class="form-control"/>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
               </div>
             </div>
               <p>Synopsis</p>
@@ -172,7 +174,7 @@
               <button type="button" name="" class="btn btn-success btn-queue" id="add-queue-btn">Queue Book To Add</button>
             </div>
             <span>0 &nbsp books added to queue</span>
-            <div class="col-md-">
+            <div class="col-md-10">
               <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Add Books To Library</button>
             </div>
               </div>

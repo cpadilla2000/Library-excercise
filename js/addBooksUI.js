@@ -13,9 +13,8 @@ AddBooksUI.prototype.init = function() {
 AddBooksUI.prototype._bindEvents = function () {
   $('#add-modal-btn').on('click', $.proxy(this._handleModalOpen, this));
   $('#add-queue-btn').on('click', $.proxy(this._handleAddToQueue, this));
+
 };
-
-
 
 AddBooksUI.prototype._handleModalOpen = function () {
    this.$container.modal('show');
