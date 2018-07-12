@@ -1,5 +1,5 @@
 var Library = function() {
-  window._bookshelf = new Array();
+
 };
 
 Library.prototype.addBook = function (book) {
@@ -138,12 +138,28 @@ Library.prototype.searchLibrary = function () {
 
 };
 
+Library.prototype.handleEventTrigger = function (sEvent) {
+
+  var oData = oData || {}
+  if(sEvent) {
+  var event = new CustomEvent(sEvent, oData);
+  document.dispatchEvent(event);
+
+
+  }
+};
+
+Library.prototype.checkForDup = function () {
+
+
+};
+
 
 //*******************Local Storage**********************
 //Stores data as strings - need to parse to convert back to objects when retrieve
 //Purpose: Use localstorage and JSON.stringify to save the state of your library
 Library.prototype.saveBooks = function () {
-  console.log(window._bookshelf);
+  //console.log(window._bookshelf);
   localStorage.setItem('books', JSON.stringify(window._bookshelf));
 }
 
@@ -154,7 +170,7 @@ Library.prototype.retrieveBooks = function () {
   var libraryBooks = [];
   var books = JSON.parse(localStorage.getItem('books'));
   for (var i = 0; i < books.length; i++) {
-    libraryBooks.push(new Book(books[i].title,books[i].author,books[i].numberOfPages, books[i].publishDate));
+    libraryBooks.push(new Book(books[i].title,books[i].author,books[i].numberOfPages, books[i].publishDate, books[i].coverImage));
     // console.log(libraryBooks);
   }
   return libraryBooks;
@@ -164,11 +180,12 @@ Library.prototype.retrieveBooks = function () {
 
 
 //create book object
-var Book = function (Title, Author, numberOfPages, publishDate) {
+var Book = function (Title, Author, numberOfPages, publishDate, coverImage) {
   this.title = Title;
   this.author = Author;
   this.numberOfPages = numberOfPages;
   this.publishDate = new Date(publishDate);
+  this.coverImage = coverImage || "image-goes-here";
 };
 
 
@@ -178,24 +195,25 @@ var newBook = [
 
 //new books arra
 var newBooks = [
-  new Book ("1984", "George Orwell", 456, "6-08-1949"),
-  new Book ("To Kill A Mockingbird", "Harper Lee", 333, "6-11-1960"),
-  new Book ("Brave New World", "Aldous Huxley", 743, "2-20-1932"),
-  new Book ("On The Road", "Jack Kerouac", 542, "1-17-1957"),
-  new Book ("Lord Of The Flies", "William Golding", 622, "9-17-1954"),
-  new Book ("IT","Stephen King", 800, "12-14-1986"),
-  new Book ("Catcher in the Rye","JD Salinger", 350, "7-16-1961"),
-  new Book ("James and the giant Peach","Roald Dahl", 160, "6-23-1961"),
-  new Book ("Kon Tiki","Thor Heyerdahl", 459, "8-22-1948"),
-  new Book ("Franny and Zooey","JD Salinger", 258, "2-08-1961"),
-  new Book ("The Shining","Stephen King", 743, "1-25-1986"),
-  new Book ("The Book Of Joe","Jonathon Tropper", 743, "3-30-2004"),
-  new Book ("The Sun And Her Flowers","Rupi Kaur", 297, "3-27-2016"),
-  new Book ("The Alchemist","Paulo Coelho", 247, "3-30-1981")
+  new Book ("1984", "George Orwell", 456, "6-08-1949","image-goes-here",),
+  new Book ("To Kill A Mockingbird", "Harper Lee", 333, "6-11-1960", "image-goes-here"),
+  new Book ("Brave New World", "Aldous Huxley", 743, "2-20-1932", "image-goes-here"),
+  new Book ("On The Road", "Jack Kerouac", 542, "1-17-1957", "image-goes-here"),
+  new Book ("Lord Of The Flies", "William Golding", 622, "9-17-1954", "image-goes-here"),
+  new Book ("IT","Stephen King", 800, "12-14-1986", "image-goes-here"),
+  new Book ("Catcher in the Rye","JD Salinger", 350, "7-16-1961", "image-goes-here"),
+  new Book ("James and the giant Peach","Roald Dahl", 160, "6-23-1961", "image-goes-here"),
+  new Book ("Kon Tiki","Thor Heyerdahl", 459, "8-22-1948", "image-goes-here"),
+  new Book ("Franny and Zooey","JD Salinger", 258, "2-08-1961", "image-goes-here"),
+  new Book ("The Shining","Stephen King", 743, "1-25-1986", "image-goes-here"),
+  new Book ("The Book Of Joe","Jonathon Tropper", 743, "3-30-2004", "image-goes-here"),
+  new Book ("The Sun And Her Flowers","Rupi Kaur", 297, "3-27-2016", "image-goes-here"),
+  new Book ("The Alchemist","Paulo Coelho", 247, "3-30-1981", "image-goes-here")
 ];
 
 //DOM function for new library scope to window
 document.addEventListener("DOMContentLoaded", function() {
   window.gLibrary = new Library();
-  window.gLibrary._bookshelf = gLibrary.retrieveBooks();
+  //window.gLibrary._bookshelf = gLibrary.retrieveBooks();
+  gLibrary.addBooks(newBooks);
 });

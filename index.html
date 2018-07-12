@@ -63,65 +63,13 @@
 
     <section class="table">
       <div class="scrollable">
-      <table class="table table-bordered table-hover">
+      <table id="data-table" class="table table-bordered table-hover">
         <div class="table-responsive">
-          <thead>
-            <tr class="warning">
-              <th>Cover</th>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Pages</th>
-              <th>PubDate</th>
-              <th>Edit</th>
-              <th>Remove Book</th>
-            </tr>
+          <thead id="data-t-head">
+
           </thead>
           <tbody>
-            <tr>
-              <td><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Frannyzoey.jpg" alt=""></td>
-              <td>Franny and Zooey</td>
-              <td>JD Salinger</td>
-              <td>258</td>
-              <td>02-08-1961</td>
-              <td><button type="button" class="btn-md" data-toggle="modal" data-target="#editModal">Edit</button></td>
-              <td><button type="button" class="btn-xs">X</button></td>
-            </tr>
-            <tr>
-              <td><img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rye_catcher.jpg" alt=""></td>
-              <td>Catcher in the Rye</td>
-              <td>JD Salinger</td>
-              <td>350</td>
-              <td>07-16-1961</td>
-              <td><button type="button" class="btn-md" data-toggle="modal" data-target="#editModal">Edit</button></td>
-              <td><button type="button" class="btn-xs">X</button></td>
-            </tr>
-            <tr>
-              <td><img src="https://upload.wikimedia.org/wikipedia/en/d/d5/JamesAndTheGiantPeach.jpg" alt=""></td>
-              <td>James and the giant Peach</td>
-              <td>Roald Dahl</td>
-              <td>160</td>
-              <td>06-23-1961</td>
-              <td><button type="button" class="btn-md" data-toggle="modal" data-target="#editModal">Edit</button></td>
-              <td><button type="button" class="btn-xs">X</button></td>
-            </tr>
-            <tr>
-              <td><img src="https://upload.wikimedia.org/wikipedia/en/6/66/TheKonTikiExpedition.jpg" alt=""></td>
-              <td>Kon Tiki</td>
-              <td>Thor Heyerdahl</td>
-              <td>459</td>
-              <td>08-22-1948</td>
-              <td><button type="button" class="btn-md" data-toggle="modal" data-target="#editModal">Edit</button></td>
-              <td><button type="button" class="btn-xs">X</button></td>
-            </tr>
-            <tr>
-              <td><img src="https://upload.wikimedia.org/wikipedia/en/c/c4/TheAlchemist.jpg" alt=""></td>
-              <td>The Alchemist</td>
-              <td>Paulo Coelho</td>
-              <td>247</td>
-              <td>03-30-1981</td>
-              <td><button type="button" class="btn-md" data-toggle="modal" data-target="#editModal">Edit</button></td>
-              <td><button type="button" class="btn-xs">X</button></td>
-            </tr>
+
           </tbody>
         </div>
       </table>
@@ -157,32 +105,38 @@
               </div>
             </div>
             <div class="form-group">
-              <div class='input-group date' id='datetimepicker1'>
+              <label for="inputPassword3" name="publication-date" class="col-sm-2 control-label">PubDate</label>
+              <div class="col-sm-8">
+                <div class='input-group date' id='datetimepicker1'>
                   <input type='text' class="form-control"/>
                   <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
+                  <span class="fa fa-calendar-alt"></span>
+                </div>
               </div>
             </div>
+            <div class="synopsis">
               <p>Synopsis</p>
               <textarea class="form-control" rows="3"></textarea>
+            </div>
               <p class="book-cover">Book Cover</p>
               <button type="button" class="btn btn-info btn-xs file-btn">Choose File</button>
             <div class="modal-footer">
               <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-4">
               <button type="button" name="" class="btn btn-success btn-queue" id="add-queue-btn">Queue Book To Add</button>
             </div>
-            <span>0 &nbsp books added to queue</span>
-            <div class="col-md-10">
-              <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Add Books To Library</button>
-            </div>
+            <span class="books-to-q">0 &nbsp books added to queue</span>
+            <div class="col-md-4">
+              <div class="row">
+                <button type="button" class="btn btn-primary"><i class="fas fa-plus" id="books-to-lib"></i> Add Books To Library</button>
               </div>
+            </div>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div>
-  </div><!-- /.modal -->
+  </div>
+</div><!-- /.modal -->
 
     <!-- remove modal----->
   <div class="modal fade modal-1" id="removeModal" tabindex="-1" role="dialog">
@@ -335,9 +289,10 @@
 <script src="js/script.js" charset="utf-8"></script>
 <script src="js/showAuthorsUI.js" charset="utf-8"></script>
 <script src="js/addBooksUI.js" charset="utf-8"></script>
-<!--<script src="js/util.js" charset="utf-8"></script>-->
+<script src="js/util.js" charset="utf-8"></script>
 <script src="js/newBookVar.js" charset="utf-8"></script>
--->
+<script src="js/dataTable.js" charset="utf-8"></script>
+
 
 
   </body>
