@@ -36,8 +36,10 @@ DataTable.prototype._updateTable = function (e) {
 };
 
 DataTable.prototype._createHead = function (book) {
-
+  //console.log(book);
+  //console.log('createheadhappened');
   thead = document.createElement('thead')
+  $(thead).attr('id','data-t-head')
   tr = document.createElement('tr')
   $(tr).addClass("warning")
   thead.append(tr)

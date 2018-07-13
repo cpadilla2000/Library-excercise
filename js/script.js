@@ -14,6 +14,7 @@ Library.prototype.addBook = function (book) {
     }
   }
   window._bookshelf.push(book);//then push books
+  this.handleEventTrigger('objUpdate')
         this.saveBooks();
         return true;
 };
@@ -34,7 +35,7 @@ Library.prototype.removeBookByTitle = function (title) {
 //Return:boolean true if the book(s) were removed, false if no books match
 var originalLength = window._bookshelf.length;
   for(var i = 0; i < window._bookshelf.length; i++) {//itteration through bookshelf
-    if(window._bookshelf[i].titlE.indexOf(title) > -1) {// remove book from this array point
+    if(window._bookshelf[i].title.indexOf(title) > -1) {// remove book from this array point
       window._bookshelf.splice(i, 1)
       return true;// match this to the title coming in. if it matches return true.
     }

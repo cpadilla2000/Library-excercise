@@ -1,50 +1,3 @@
-// var AddBooksUI = function(container){
-//   Library.call(this);
-//   this._queue = new Array();
-//   this.$container = container;
-// };
-//
-// AddBooksUI.prototype = Object.create(Library.prototype);
-//
-// AddBooksUI.prototype.init = function() {
-//   this._bindEvents();
-// };
-//
-// AddBooksUI.prototype._bindEvents = function () {
-//   $('#add-modal-btn').on('click', $.proxy(this._handleModalOpen, this));
-//   $('#add-queue-btn').on('click', $.proxy(this._handleAddToQueue, this));
-//
-// };
-//
-// AddBooksUI.prototype._handleModalOpen = function () {
-//    this.$container.modal('show');
-// };
-//
-// AddBooksUI.prototype._handleAddToQueue = function () {
-//
-//   var sForm = this.$container.find('form').serializeArray()
-//   console.log(sForm);
-// };
-//
-// $(function(){
-//   window.gAddBooksUI = new AddBooksUI($('#addModal'));
-//   window.gAddBooksUI.init();
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 var AddBooksUI = function(){
   Library.call(this);
@@ -63,7 +16,7 @@ AddBooksUI.prototype._bindEvents = function () {
   ///this = my instance
   this.$container.find('#add-queue-btn').on('click', $.proxy(this._queueBook, this));
   this.$container.find('#books-to-lib').on('click', $.proxy(this._addQueuedToLibrary, this));
-  this.$container.find('.clear-q').on('click', $.proxy(this._clearQueue, this));
+  this.$container.find('.clear-queue').on('click', $.proxy(this._clearQueue, this));
   $('#add-modal-btn').on('click', $.proxy(this._handleModalOpen, this));
 
   //bind event to add books to queue
@@ -84,7 +37,7 @@ AddBooksUI.prototype._queueBook = function (e) {
   var sForm = this.$container.find('form').serializeArray();
   var oBook = new Object();
   var wasBookValid = true;
-   console.log(sForm);
+   //console.log(sForm);
 
   $.each(sForm, function(index, kvp){
     if(kvp.value) {
@@ -96,25 +49,27 @@ AddBooksUI.prototype._queueBook = function (e) {
   });
 
   // console.log("object create: " + oBook);
-   console.log(oBook);
+   //console.log(oBook);
    var book = new Book(oBook)
-   console.log(book);
+   //console.log(book);
 
   if(wasBookValid && this.checkForDup(book)) {
     this._bookCounter++
     this.$container.find('.books-to-q').text(this._bookCounter);
     this._queue.push(book)
+    $('#form')[0].reset()
 
   }
   // console.log(this._queue);
   return wasBookValid;
+
 };
 AddBooksUI.prototype._handleModalOpen = function () {
    this.$container.modal('show');
 };
 
 AddBooksUI.prototype._addQueuedToLibrary = function () {
-  console.log('qqqqq');
+  //console.log('qqqqq');
   if(this._queue.length) {
     // console.log("first check");
     this.addBooks(this._queue)
@@ -123,6 +78,7 @@ AddBooksUI.prototype._addQueuedToLibrary = function () {
 
       // console.log("was added");
       this._clearQueue();
+      $('#addModal').modal('toggle');
 
   } else {
     alert("Please queue at least one book.")
@@ -132,7 +88,7 @@ AddBooksUI.prototype._addQueuedToLibrary = function () {
 
 AddBooksUI.prototype._clearQueue = function () {
   this._queue = new Array();
-  this.$container.find('.queueNumber').text(this._queue.length);
+  this.$container.find('.books-to-q').text(this._queue.length);
   return false;
 };
 

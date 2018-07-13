@@ -15,23 +15,26 @@ ShowAuthorsUI.prototype.init = function () {
 ShowAuthorsUI.prototype._bindEvents = function () {
   $('#showAuthors').on('click', $.proxy(this._handleShowAuthors, this));
 
-  console.log('_bindEvents');
+  //console.log('_bindEvents');
   return false;
   //bind event to add books to queue
   //bind event to add queued books to through library bookshelf
 };
 
 ShowAuthorsUI.prototype._handleShowAuthors = function () {
-  console.log('hello');
-  var authors = this.getAuthors();
-  //console.log(authors);
-  // console.log(authors.length)
-  //$('#showAuthor').modal('show');
+  var authors = this.getAuthors();//arr od authors
+  var myUl = document.createElement("ul");// create unordered list
+
+  for (var i = 0; i < authors.length; i++) {
+    var li = document.createElement("li");
+    $(li).text(authors[i]);
+    myUl.append(li)
+    console.log(myUl);
+  }
+
   if(authors.length > 0){
-    //console.log('brett is cool')
     this.$container.modal('show');
-    //console.log('c is the best');
-    this.$container.find('.modal-body').html(this._createUlOfAuthors(authors));
+    this.$container.find('.modal-body').html(myUl);
   } else {
     alert('Nothing in library!');
   }
@@ -39,19 +42,19 @@ ShowAuthorsUI.prototype._handleShowAuthors = function () {
   return false;
 };
 
-ShowAuthorsUI.prototype._createUlOfAuthors = function (authors) {
-   console.log('s is the best');
-  var ul = document.createElement("ul");
-  for (var i = 0; i < authors.length; i++) {
-    var li = document.createElement("li");
-    $(li).text(authors[i]);
-    ul.append(li)
-    //console.log('whaaddafuck');
-  }
-  console.log(ul);
-  return ul;
-  
-};
+// ShowAuthorsUI.prototype._createUlOfAuthors = function (authors) {
+//    console.log('s is the best');
+//   var ul = document.createElement("ul");
+//   for (var i = 0; i < authors.length; i++) {
+//     var li = document.createElement("li");
+//     $(li).text(authors[i]);
+//     ul.append(li)
+//     //console.log('whaaddafuck');
+//   }
+//   console.log(ul);
+//   return ul;
+//
+// };
 
 $(function(){
   window.gShowAuthUI = new ShowAuthorsUI($('#showAuthor'));

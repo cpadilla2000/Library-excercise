@@ -10,21 +10,21 @@
   </head>
   <body>
 
-    <section class="nav">
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse">
-            <form class="navbar-form navbar-right">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Username">
-                <input type="text" class="form-control" placeholder="Password">
-              </div>
-              <button type="submit" class="btn btn-default">Login</button>
-            </form>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-    </section>
+  <section class="nav">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Username">
+              <input type="text" class="form-control" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Login</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </section>
 
 <div class="container-fluid">
     <section class="title">
@@ -85,7 +85,7 @@
             <h4 class="modal-title">Add Book</h4>
           </div>
           <div class="modal-body">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" id="form">
             <div class="form-group">
               <label for="inputEmail3" class="col-sm-2 control-label">Title*</label>
               <div class="col-sm-8">
@@ -123,12 +123,12 @@
             <div class="modal-footer">
               <div class="row">
                 <div class="col-md-4">
-                  <button type="button" name="" class="btn btn-success btn-queue" id="add-queue-btn">Queue Book To Add</button>
+                  <button type="button" class="btn btn-success btn-queue" id="add-queue-btn">Queue Book To Add</button>
                 </div>
                 <span class="books-to-q">0</span> &nbsp books added to queue
                 <div class="col-md-4">
                   <div class="row">
-                    <button type="button" class="btn btn-primary" id="books-to-lib"><i class="fas fa-plus"></i> Add Books To Library</button>
+                    <button type="button" class="btn btn-primary" class="clear-que-lib" id="books-to-lib"><i class="fas fa-plus"></i> Add Books To Library</button>
                   </div>
                 </div>
               </div>
@@ -139,144 +139,144 @@
     </div><!-- /.modal -->
 
     <!-- remove modal----->
-  <div class="modal fade modal-1" id="removeModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Remove Book</h4>
-        </div>
-        <div class="form-group col-md-6 remove-text">
-          <label for="usr">Remove By Title</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-        <div class="form-group col-md-6 remove-text">
-          <label for="pwd">Remove By Author</label>
-          <input type="password" class="form-control" id="pwd">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Remove Books</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+    <div class="modal fade modal-1" id="removeModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Remove Book</h4>
+          </div>
+          <div class="form-group col-md-6 remove-text">
+            <label for="usr">Remove By Title</label>
+            <input type="text" class="form-control" id="usr">
+          </div>
+          <div class="form-group col-md-6 remove-text">
+            <label for="pwd">Remove By Author</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Remove Books</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
   <!-- author modal----->
-  <div class="modal fade" id="showAuthor" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">All Authors</h4>
-        </div>
-        <div class="modal-body">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div>
+    <div class="modal fade" id="showAuthor" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">All Authors</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
 <!--random author---->
-  <div class="modal fade" id="randAuthor" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Random Authors</h4>
-        </div>
-        <div class="modal-body">
-          <ul>
-            <li>JD Salinger</li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+    <div class="modal fade" id="randAuthor" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Random Authors</h4>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>JD Salinger</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
   <!--recommended Book---->
-  <div class="modal fade" id="recomBook" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Recommended Book By Collin Taylor</h4>
-        </div>
-        <div class="modal-body">
-          <div class="col-md-4">
-            <img src="https://upload.wikimedia.org/wikipedia/en/6/66/TheKonTikiExpedition.jpg" alt="" class="img-modal">
+    <div class="modal fade" id="recomBook" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Recommended Book By Collin Taylor</h4>
           </div>
-          <div class="col-md-8 rec-text">
-            <p>Title:</p>
-            <p>Pages:</p>
-            <p>Publication Date:</p>
+          <div class="modal-body">
+            <div class="col-md-4">
+              <img src="https://upload.wikimedia.org/wikipedia/en/6/66/TheKonTikiExpedition.jpg" alt="" class="img-modal">
+            </div>
+            <div class="col-md-8 rec-text">
+              <p>Title:</p>
+              <p>Pages:</p>
+              <p>Publication Date:</p>
+            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary button-rec" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary button-rec" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
 
 <!--show books modal--->
-  <div class="modal fade" id="showBooks" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Show All Books</h4>
-        </div>
-        <div class="modal-body">
-          <div class="col-md-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Frannyzoey.jpg" alt="" class="img-modal">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rye_catcher.jpg" alt="" class="img-modal">
-            <img src="https://upload.wikimedia.org/wikipedia/en/d/d5/JamesAndTheGiantPeach.jpg" alt="" class="img-modal">
-            <img src="https://upload.wikimedia.org/wikipedia/en/6/66/TheKonTikiExpedition.jpg" alt="" class="img-modal">
-            <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/TheAlchemist.jpg" alt="" class="img-modal">
+    <div class="modal fade" id="showBooks" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Show All Books</h4>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+          <div class="modal-body">
+            <div class="col-md-4">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Frannyzoey.jpg" alt="" class="img-modal">
+              <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rye_catcher.jpg" alt="" class="img-modal">
+              <img src="https://upload.wikimedia.org/wikipedia/en/d/d5/JamesAndTheGiantPeach.jpg" alt="" class="img-modal">
+              <img src="https://upload.wikimedia.org/wikipedia/en/6/66/TheKonTikiExpedition.jpg" alt="" class="img-modal">
+              <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/TheAlchemist.jpg" alt="" class="img-modal">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Edit Book By Title Or Author</h4>
-        </div>
-        <div class="modal-body">
-        <div class="form-group edit-text">
-          <label for="usr">Edit By Title</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-        <div class="form-group edit-text">
-          <label for="pwd">Edit By Author</label>
-          <input type="password" class="form-control" id="pwd">
-        </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Edit Book By Title Or Author</h4>
+          </div>
+          <div class="modal-body">
+          <div class="form-group edit-text">
+            <label for="usr">Edit By Title</label>
+            <input type="text" class="form-control" id="usr">
+          </div>
+          <div class="form-group edit-text">
+            <label for="pwd">Edit By Author</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 
 <!--copyright symbol---->
-  <div class="row">
-    <div class="col-md-12">
-      <p class="copyright-text">&copy;Copyright 2018</p>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="copyright-text">&copy;Copyright 2018</p>
+      </div>
     </div>
-  </div>
 
 </div><!--closing container fluid------>
 
