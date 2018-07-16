@@ -20,7 +20,7 @@ Library.prototype.addBook = function (book) {
 };
 
 Library.prototype.checkForDup = function (book) {
-  console.log('checkfordup');
+  //console.log('checkfordup');
   for(var i = 0; i < window._bookshelf.length; i++) {//itteration through bookshelf
     if(window._bookshelf[i].title.indexOf(book.title) > -1){ //if statement for index of title greater than negative 1
       return false;
@@ -183,6 +183,7 @@ Library.prototype.retrieveBooks = function () {
   }
   return libraryBooks;
 };
+
 
 var Book = function (oArgs) {
 

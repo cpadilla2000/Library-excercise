@@ -13,7 +13,7 @@ AddBooksUI.prototype.init = function() {
 };
 
 AddBooksUI.prototype._bindEvents = function () {
-  ///this = my instance
+  ///this = my instance.
   this.$container.find('#add-queue-btn').on('click', $.proxy(this._queueBook, this));
   this.$container.find('#books-to-lib').on('click', $.proxy(this._addQueuedToLibrary, this));
   this.$container.find('.clear-queue').on('click', $.proxy(this._clearQueue, this));
@@ -30,14 +30,15 @@ AddBooksUI.prototype._bindEvents = function () {
 //Two ways to access and set a key value pair in an object
 //oBook[]
 //oBook.
+
+
 AddBooksUI.prototype._queueBook = function (e) {
   //console.log('qBookHappened');
   //e.preventDefault();
-  this.handleEventTrigger('objUpdate')
   var sForm = this.$container.find('form').serializeArray();
   var oBook = new Object();
   var wasBookValid = true;
-   //console.log(sForm);
+   console.log(sForm);
 
   $.each(sForm, function(index, kvp){
     if(kvp.value) {
