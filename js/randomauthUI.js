@@ -15,7 +15,7 @@ RandomAuthUI.prototype._bindEvents = function () {
   //add native events here
   $('#rand-btn').on('click', $.proxy(this._handleRanAuthors, this));
   //$('#rand-btn').on('click', $.proxy(this._handleModalOpen, this));
-  console.log("hello");
+  //console.log("hello");
 };
 
 RandomAuthUI.prototype._handleRanAuthors = function () {

@@ -38,7 +38,7 @@ AddBooksUI.prototype._queueBook = function (e) {
   var sForm = this.$container.find('form').serializeArray();
   var oBook = new Object();
   var wasBookValid = true;
-   console.log(sForm);
+   //console.log(sForm);
 
   $.each(sForm, function(index, kvp){
     if(kvp.value) {

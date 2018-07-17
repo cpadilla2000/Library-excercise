@@ -29,7 +29,7 @@ ShowAuthorsUI.prototype._handleShowAuthors = function () {
     var li = document.createElement("li");
     $(li).text(authors[i]);
     myUl.append(li)
-    console.log(myUl);
+    //console.log(myUl);
   }
 
   if(authors.length > 0){

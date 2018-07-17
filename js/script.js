@@ -65,7 +65,7 @@ Library.prototype.getRandomBook = function () {
 
     var rand = window._bookshelf[Math.floor(Math.random() * window._bookshelf.length)]; {// variable for math random to pick random book from books array
       return rand;// returns book object
-  }
+    }
   return null;//return null if no books
 };
 

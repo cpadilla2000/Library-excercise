@@ -41,7 +41,7 @@
       <div class="row">
         <div class="col-md-4 col-sm-4 col-lg-4">
           <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#showBooks">Show All Books</button>
-          <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#recomBook">Recommended Book</button>
+          <button type="button" class="btn btn-default btn-md" id="recommend-btn">Recommended Book</button>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
           <form class="form-inline">
@@ -87,19 +87,19 @@
             <div class="form-group">
               <label for="inputEmail3" class="col-sm-2 control-label">Title*</label>
               <div class="col-sm-8">
-                <input type="email" name="title" class="form-control" id="" placeholder="Book Title">
+                <input type="email" name="title" class="form-control" placeholder="Book Title">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-2 control-label">Author*</label>
               <div class="col-sm-8">
-                <input type="text" name="author" class="form-control" id="" placeholder="Author">
+                <input type="text" name="author" class="form-control" placeholder="Author">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-2 control-label">Pages</label>
               <div class="col-sm-8">
-                <input type="number" name="numberOfPages" class="form-control" id="" placeholder="Pages">
+                <input type="number" name="numberOfPages" class="form-control" placeholder="Pages">
               </div>
             </div>
             <div class="form-group">
@@ -202,12 +202,8 @@
           </div>
           <div class="modal-body">
             <div class="col-md-4">
-              <img src="https://upload.wikimedia.org/wikipedia/en/6/66/TheKonTikiExpedition.jpg" alt="" class="img-modal">
             </div>
             <div class="col-md-8 rec-text">
-              <p>Title:</p>
-              <p>Pages:</p>
-              <p>Publication Date:</p>
             </div>
           </div>
           <div class="modal-footer">
