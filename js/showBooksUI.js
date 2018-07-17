@@ -1,6 +1,6 @@
 var ShowBooksUI = function(){
   Library.call(this);
-  this.$container = $('#randAuthor');
+  this.$container = $('#showBooks');
 };
 
 ShowBooksUI.prototype = Object.create(Library.prototype);
@@ -20,10 +20,13 @@ ShowBooksUI.prototype._bindEvents = function () {
 
 ShowBooksUI.prototype._handleShowAuthors = function () {
 
-    // var ranAuthors = this.getRandomAuthorByName();//arr of random authors
-    // //console.log(ranAuthors);
-      this.$container.modal('show');
-      this.$container.find('.modal-body').html(ranAuthors);
+
+
+
+
+
+  this.$container.modal('show');
+  this.$container.find('.modal-body').html();
 
     return;
 
