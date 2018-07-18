@@ -8,6 +8,7 @@ ShowAuthorsUI.prototype = Object.create(Library.prototype);
 ShowAuthorsUI.prototype.init = function () {
   //window._bookshelf = this.retrieveBooks();
   //console.log(window._bookshelf);
+  this.retrieveBooks();
   this._bindEvents();
   return; //stops function
 };

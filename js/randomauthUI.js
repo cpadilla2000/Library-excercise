@@ -7,6 +7,7 @@ RandomAuthUI.prototype = Object.create(Library.prototype);
 
 
 RandomAuthUI.prototype.init = function() {
+  this.retrieveBooks();
   this._bindEvents();
   //this._bindCustomListeners();
 };

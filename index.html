@@ -44,14 +44,11 @@
           <button type="button" class="btn btn-default btn-md" id="recommend-btn">Recommended Book</button>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
-          <form class="form-inline">
+          <form class="form-inline" id="searchForm">
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Author">
+              <input type="text" class="form-control" id="authorAndTitle-Input"  placeholder="Author and Title">
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control" placeholder="Title">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
+            <button type="submit" class="btn btn-default" id="search-btn">Search</button>
           </form>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
@@ -144,13 +141,15 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Remove Book</h4>
           </div>
-          <div class="form-group col-md-6 remove-text">
-            <label for="usr">Remove By Title</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
-          <div class="form-group col-md-6 remove-text">
-            <label for="pwd">Remove By Author</label>
-            <input type="password" class="form-control" id="pwd">
+          <div class="modal-body">
+            <div class="form-group col-md-6 remove-text">
+              <label for="usr">Remove By Title</label>
+              <input type="text" class="form-control" id="usr">
+            </div>
+            <div class="form-group col-md-6 remove-text">
+              <label for="pwd">Remove By Author</label>
+              <input type="password" class="form-control" id="pwd">
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Remove Books</button>
@@ -282,7 +281,8 @@
 <script src="js/randomAuthUI.js" charset="utf-8"></script>
 <script src="js/recommendedBookUI.js" charset="utf-8"></script>
 <script src="js/showBooksUI.js" charset="utf-8"></script>
-<script src="js/removeBooksUI.js" charset="utf-8"></script>
+<script src="js/removeBookUI.js" charset="utf-8"></script>
+<script src="js/searchUI.js" charset="utf-8"></script>
 
 
 

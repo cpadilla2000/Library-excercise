@@ -7,6 +7,7 @@ RemoveBookUI.prototype = Object.create(Library.prototype);
 
 
 RemoveBookUI.prototype.init = function() {
+  this.retrieveBooks();
   this._bindEvents();
   //this._bindCustomListeners();
 };
@@ -14,13 +15,12 @@ RemoveBookUI.prototype.init = function() {
 RemoveBookUI.prototype._bindEvents = function () {
   //add native events here
   $('#remove-modal-btn').on('click', $.proxy(this._handleRemoveBook, this));
-  //$('#rand-btn').on('click', $.proxy(this._handleModalOpen, this));
   //console.log("hello");
 };
 
 RemoveBookUI.prototype._handleRemoveBook = function () {
 
-
+  var removeBT = this.removeBookByTitle();
 
 
 
