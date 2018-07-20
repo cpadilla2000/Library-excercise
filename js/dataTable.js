@@ -22,7 +22,7 @@ DataTable.prototype._bindCustomListeners = function () {
 };
 
 DataTable.prototype.searchTable = function (e) {
-  console.log(e);
+  //console.log(e);
   this._updateTable(e.detail)
 
 };
@@ -59,13 +59,13 @@ DataTable.prototype._createHead = function (book) {
     $(th).text(key.replace(/ /g, " "))
 
     }
-    // tg = document.createElement('th')//find better wayyyyyyyy
-    // tr.append(tg)
-    //  $(tg).text('Edit').attr('editRow')
-    // tj = document.createElement('th')//find better wayyyyyyyy
-    // tr.append(tj)
-    // $(tj).text('Remove Book')
-    //console.log(thead);
+    tg = document.createElement('th')//find better wayyyyyyyy
+    tr.append(tg)
+    $(tg).text('Edit').attr('editRow')
+    tj = document.createElement('th')//find better wayyyyyyyy
+    tr.append(tj)
+    $(tj).text('Remove Book')
+    console.log(thead);
     return thead;
 
 };

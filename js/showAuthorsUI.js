@@ -23,7 +23,7 @@ ShowAuthorsUI.prototype._bindEvents = function () {
 };
 
 ShowAuthorsUI.prototype._handleShowAuthors = function () {
-  var authors = this.getAuthors();//arr od authors
+  var authors = this.getAuthors();//arr of authors
   var myUl = document.createElement("ul");// create unordered list
 
   for (var i = 0; i < authors.length; i++) {
@@ -61,6 +61,4 @@ $(function(){
   window.gShowAuthUI = new ShowAuthorsUI($('#showAuthor'));
   window.gShowAuthUI.init();
   //console.log('dog');
-  window._bookshelf;
-
 });

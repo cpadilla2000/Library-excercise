@@ -26,8 +26,18 @@ RecommendedBookUI.prototype._handleModalOpen = function () {
 
   var title = this.title;
 
+  var myUl = document.createElement("ul");// create unordered list
+
+  for (var i = 0; i < recBooks.length; i++) {
+    var li = document.createElement("li");
+    $(li).text(recBooks[i]);
+    myUl.append(li)
 
 
+  }
+
+
+  //this.$container.find('.modal-body').html(myUl);
   this.$container.find('.modal-body').text(recBooks.title);
   //console.log(recBooks);
 
@@ -37,26 +47,8 @@ RecommendedBookUI.prototype._handleModalOpen = function () {
 };
 
 
-// RecommendedBookUI.prototype._showRecBooks = function () {
-//   console.log('hello');
-//
-//   var recBooks = this.getRandomBook();
-//
-//   var title = recBooks.title;
-//
-//   console.log(recBooks,title);
-//
-//
-//   this.$container.find('.modal-body').html(recBooks);
-//   console.log(recBooks);
-//   return;
-//
-//
-// };
-
 
 $(function(){
   window.gRecommendedBookUI = new RecommendedBookUI();
   window.gRecommendedBookUI.init();
-  window._bookshelf;
 });

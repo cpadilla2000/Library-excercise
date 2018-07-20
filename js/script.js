@@ -38,6 +38,7 @@ var originalLength = window._bookshelf.length;
     if(window._bookshelf[i].title.indexOf(title) > -1) {// remove book from this array point
       window._bookshelf.splice(i, 1)
       this.saveBooks();
+      //this.handleEventTrigger('objUpdate', { detail: titleI })
       return true;// match this to the title coming in. if it matches return true.
     }
   }
@@ -49,14 +50,24 @@ var originalLength = window._bookshelf.length;
 Library.prototype.removeBookByAuthor = function (author) {
 //Purpose: Remove a specific book from your books array by the author name.
 //Return: boolean true if the book(s) were removed, false if no books match
-
-  for(var i = 0; i < window.length; i++) {//itteration through bookshelf
-    if(window._bookshelf[i].author.indexOf(author) > -1) {//if statement for finding book by author
-      window._bookshelf.splice(i, 1)//splice book from array to remove book
-      this.saveBooks();
-      return true;
+var count = 0
+  for(var i = 0; i < window._bookshelf.length; i++) {//itteration through bookshelf
+    if(window._bookshelf[i].author.trim().indexOf(author) > -1 === window._bookshelf[i].author.toLowerCase()) {//if statement for finding book by author
+      window._bookshelf.splice(i, 1);//splice book from array to remove book
+      i--;
+      count++;
     }
   }
+
+  if (count > 0) {
+    this.saveBooks();
+    this.handleEventTrigger('objUpdate', { detail: authorI } )
+    return true;
+  }
+
+      // this.saveBooks();
+      // this.handleEventTrigger('objUpdate', authorI)
+
       return false;
 };
 
@@ -188,7 +199,7 @@ Library.prototype.searchLibrary = function (tanda)  {
   var searchTwo = this.getBooksByAuthor(tanda)
    searchN = search.concat(searchTwo)
 
-   console.log(searchN,'finalSearch');
+   //console.log(searchN,'finalSearch');
 
   if(search.length){
   searchN = search.filter(function(value, index, self){
@@ -246,8 +257,8 @@ var Book = function (oArgs) {
   this.numberOfPages = oArgs.numberOfPages;
   this.publishDate = new Date(oArgs.publishDate);
   this.coverImage = oArgs.coverImage || "image-goes-here";
-  this.Edit = oArgs.edit
-  this.RemoveBook =oArgs.removeBook
+  // this.Edit = oArgs.edit
+  // this.RemoveBook =oArgs.removeBook
 
 };
 

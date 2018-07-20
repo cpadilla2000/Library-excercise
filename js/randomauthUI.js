@@ -34,5 +34,4 @@ RandomAuthUI.prototype._handleRanAuthors = function () {
 $(function(){
   window.gRandomAuthUI = new RandomAuthUI();
   window.gRandomAuthUI.init();
-  window._bookshelf;
 });

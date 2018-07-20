@@ -14,27 +14,55 @@ RemoveBookUI.prototype.init = function() {
 
 RemoveBookUI.prototype._bindEvents = function () {
   //add native events here
-  $('#remove-modal-btn').on('click', $.proxy(this._handleRemoveBook, this));
+  $('#remove-modal-btn').on('click', $.proxy(this._handleModalOpen, this));
+  $('#remove-books-btn').on('click', $.proxy(this._handleRemoveBookByAuthor, this));
+  $('#remove-books-btn').on('click', $.proxy(this._handleRemoveBookTitle, this));
+
+  return false;
   //console.log("hello");
 };
 
-RemoveBookUI.prototype._handleRemoveBook = function () {
+RemoveBookUI.prototype._handleModalOpen = function () {
+    this.$container.modal('show');
 
-  var removeBT = this.removeBookByTitle();
+    return;
+};
+
+RemoveBookUI.prototype._handleRemoveBookTitle = function () {
 
 
+  var titleI = this.$container.find("#title-Input").val();
+
+  var removeBT = this.removeBookByTitle(titleI);
+
+  this.handleEventTrigger('objUpdate', titleI,)
+
+  return;
+
+};
+
+RemoveBookUI.prototype._handleRemoveBookByAuthor = function () {
 
 
-  this.$container.modal('show');
-  this.$container.find('.modal-body').html();
+  var removeBA = this.removeBookByAuthor(authorI);
+
+  var authorI = this.$container.find("#author-Input").val();
+
+  this.handleEventTrigger('objUpdate', authorI)
 
     return;
 
 };
 
+// RemoveBookUI.prototype._handleModalOpen = function () {
+//     this.$container.modal('show');
+//     this.$container.find('.modal-body').html(_handleRemoveBook());
+//
+//     return;
+// };
+
 
 $(function(){
   window.gRemoveBookUI = new RemoveBookUI();
   window.gRemoveBookUI.init();
-  window._bookshelf;
 });

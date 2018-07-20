@@ -27,7 +27,7 @@ SearchUI.prototype._handleSearch = function (pre) {
 
 
   this.handleEventTrigger('searchUp', searchResult)
-  console.log(searchResult);
+  //console.log(searchResult);
   pre.preventDefault();
 
   return;
