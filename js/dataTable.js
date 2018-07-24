@@ -6,7 +6,8 @@ var DataTable = function(){
 DataTable.prototype = Object.create(Library.prototype);
 
 DataTable.prototype.init = function() {
-  this.retrieveBooks();
+  this.getBooksFromDB();
+  //this.retrieveBooks();
   this._updateTable(window._bookshelf);
   this._bindEvents();
   this._bindCustomListeners();

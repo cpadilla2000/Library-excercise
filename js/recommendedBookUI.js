@@ -7,7 +7,7 @@ RecommendedBookUI.prototype = Object.create(Library.prototype);
 
 
 RecommendedBookUI.prototype.init = function() {
-  this.retrieveBooks();
+  //this.retrieveBooks();
   this._bindEvents();
   //this._bindCustomListeners();
 };

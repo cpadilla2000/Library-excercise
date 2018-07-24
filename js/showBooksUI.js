@@ -7,7 +7,7 @@ ShowBooksUI.prototype = Object.create(Library.prototype);
 
 
 ShowBooksUI.prototype.init = function() {
-  this.retrieveBooks();
+  //this.retrieveBooks();
   this._bindEvents();
   //this._bindCustomListeners();
 };

@@ -7,7 +7,7 @@ RemoveBookUI.prototype = Object.create(Library.prototype);
 
 
 RemoveBookUI.prototype.init = function() {
-  this.retrieveBooks();
+  //this.retrieveBooks();
   this._bindEvents();
   //this._bindCustomListeners();
 };

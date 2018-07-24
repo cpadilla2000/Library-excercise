@@ -230,23 +230,35 @@ Library.prototype.handleEventTrigger = function (sEvent, oData) {
 //*******************Local Storage**********************
 //Stores data as strings - need to parse to convert back to objects when retrieve
 //Purpose: Use localstorage and JSON.stringify to save the state of your library
-Library.prototype.saveBooks = function () {
-  //console.log(window._bookshelf);
-  var conLib = JSON.stringify(window._bookshelf);
-  localStorage.setItem(this._key, conLib);
-}
+// Library.prototype.saveBooks = function () {
+//   //console.log(window._bookshelf);
+//   var conLib = JSON.stringify(window._bookshelf);
+//   localStorage.setItem(this._key, conLib);
+// }
+//
+// Library.prototype.retrieveBooks = function () {
+// //loop through JSON array and get keys and values
+// //************** Not Working in Firefox*******************************
+// //not instantiating books as book objects in foreach loop or in for loop - works in Chrome
+//   var libraryBooks = [];
+//   var books = JSON.parse(localStorage.getItem(this._key));
+//   for (var i = 0; i < books.length; i++) {
+//     window._bookshelf[i] = (new Book(books[i]));
+//     // console.log(libraryBooks);
+//   }
+//   return;
+// };
 
-Library.prototype.retrieveBooks = function () {
-//loop through JSON array and get keys and values
-//************** Not Working in Firefox*******************************
-//not instantiating books as book objects in foreach loop or in for loop - works in Chrome
-  var libraryBooks = [];
-  var books = JSON.parse(localStorage.getItem(this._key));
-  for (var i = 0; i < books.length; i++) {
-    window._bookshelf[i] = (new Book(books[i]));
-    // console.log(libraryBooks);
-  }
-  return;
+Library.prototype.getBooksFromDB = function () {
+
+  $.ajax({
+    url:window.libraryURL,
+    dataType: 'json',
+    method: 'GET',
+    success: (data) => {
+      window._bookshelf = data;
+    }
+  })
 };
 
 

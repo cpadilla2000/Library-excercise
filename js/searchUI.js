@@ -7,7 +7,7 @@ SearchUI.prototype = Object.create(Library.prototype);
 
 
 SearchUI.prototype.init = function() {
-  this.retrieveBooks();
+  //this.retrieveBooks();
   this._bindEvents();
   //this._bindCustomListeners();
 };
