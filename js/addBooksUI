@@ -1,0 +1,24 @@
+var addBooksUI = function(conatiner){
+  Library.call(this);
+  this._tempBookshelf = new Array();
+  this.$container = contatiner;
+};
+
+addBooksUI.prototype = Object.create(Library.prototype);
+
+addBooksUI.prototype.init = function(){
+  this._bindEvents();
+
+};
+
+addBooksUI.prototype._bindEvents = function(){
+  $('#addbutton').on('click', $.proxy(this._handleModalOpen, this));
+};
+
+addBooksUI.prototype._handleModalOpen = function () {
+
+};
+
+$(function(){
+  window.myAddBooksUI = new addBooksUI($('#addBookModal'));
+});
